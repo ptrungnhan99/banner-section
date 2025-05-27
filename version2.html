@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banner Section</title>
+
+    <link rel="preload" href="assets/fonts/SVN-Mikado-Regular.woff" as="font" type="font/woff"
+        crossorigin="anonymous" />
+    <link rel="preload" href="assets/fonts/SVN-Mikado-Medium.woff" as="font" type="font/woff" crossorigin="anonymous" />
+    <link rel="preload" href="assets/fonts/SVN-Mikado-Bold.woff" as="font" type="font/woff" crossorigin="anonymous" />
+    <link rel="preload" href="assets/fonts/SVN-Mikado-Ultra.woff" as="font" type="font/woff" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8.0.7/swiper-bundle.min.css">
+    <link rel="stylesheet" href="assets/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/general.min.css">
+    <link rel="stylesheet" href="https://glico-icreo.com.vn/Users/assets/css/general.min.css?v=1.0.7">
+    <link rel="stylesheet" href="https://glico-icreo.com.vn/Users/assets/css/home.min.css?v=1.0.1">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .banner-section {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .swiper-container {
+            width: 100%;
+            height: 100%;
+        }
+
+        ul.swiper-wrapper {
+            list-style-type: none;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            /* padding-top: 56.25%; */
+            padding-top: calc(690 / 1920 * 100%);
+            /* hoặc 35.94% */
+            overflow: hidden;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .video-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .swiper-button-next,
+        .swiper-button-prev {
+            color: #e5005a;
+        }
+
+        .swiper-pagination .swiper-pagination-bullet {
+            width: 10px !important;
+            height: 10px !important;
+            background: #fff;
+            opacity: 1 !important;
+        }
+
+        .swiper-pagination .swiper-pagination-bullet-active {
+            background: #e5005a !important;
+        }
+
+        @media screen and (max-width: 767px) {
+
+            .swiper-button-next:after,
+            .swiper-button-prev:after {
+                font-size: 30px;
+            }
+
+            .video-wrapper {
+                padding-top: 100%;
+                overflow: hidden;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="d-none d-md-none d-lg-block d-xl-block container nav_desktop" id="navigation_desktop">
+        <div class="nav_desktop_left">
+            <div class="nav-item">
+                <a href="https://glico-icreo.com.vn/">
+                    <i class="logo-glico"></i>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="https://glico-icreo.com.vn/" class="active">
+                    <i class="home-icon"></i>
+                </a>
+            </div>
+            <div class="nav-item">
+
+                <a href="https://cp.glico.com/icreo/products/balancemilk/" target="_blank" rel="nofollow">
+                    Triết lý dinh dưỡng <br> Nhật Bản
+                </a>
+            </div>
+            <div class="nav-item">
+
+                <a href="https://glico-icreo.com.vn/dang-ky-ngay.html">
+                    Đăng ký nhận<br> cẩm nang
+                </a>
+            </div>
+            <div class="nav-item">
+
+                <a href="https://glico-icreo.com.vn/goc-chuyen-gia.html">
+                    Góc <br>Chuyên Gia
+                </a>
+            </div>
+
+
+        </div>
+        <div class="nav_desktop_right">
+            <div class="nav-item">
+                <a href="https://glico-icreo.com.vn/gioi-thieu-san-pham.html">
+                    <i class="logo-glico-icreo"></i>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="https://glico-icreo.com.vn/danh-muc-san-pham.html">
+                    <i class="btn-buy-glico-header"></i>
+                </a>
+            </div>
+
+
+
+            <div class="nav-item">
+                <div class="dropdown">
+                    <a href="#">
+                        <i class="account-icon"></i>
+                        <i class="account-icon-arrow-down arrow"></i>
+                    </a>
+                    <div class="dropdown-content">
+
+                        <a href="https://glico-icreo.com.vn/register.html">Đăng ký</a>
+                        <a href="https://glico-icreo.com.vn/login.html">Đăng nhập</a>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="d-block d-md-block d-lg-none d-xl-none nav_mobile">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navigation_mobile">
+            <a class="navbar-brand" href="https://glico-icreo.com.vn/">
+                <i class="logo-glico"></i>
+            </a>
+            <a class="navbar-brand" href="https://glico-icreo.com.vn/gioi-thieu-san-pham.html">
+                <i class="logo-glico-icreo"></i>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="btn-expanded"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto" id="ul_navbar_mobile">
+                    <li class="nav-item">
+                        <hr>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Danh mục sản phẩm</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item"
+                                href="https://glico-icreo.com.vn/glico-icreo-balance-milk-hop-giay-p7929.html">Glico
+                                ICREO Balance Milk (hộp giấy)</a><a class="dropdown-item"
+                                href="https://glico-icreo.com.vn/glico-icreo-balance-milk-320g-p7931.html">Glico ICREO
+                                Balance Milk (320g)</a><a class="dropdown-item"
+                                href="https://glico-icreo.com.vn/glico-icreo-balance-milk-800g-p7928.html">Glico ICREO
+                                Balance Milk (800g)</a><a class="dropdown-item"
+                                href="https://glico-icreo.com.vn/combo-glico-icreo-balance-milk-p7932.html">Combo Glico
+                                ICREO Balance Milk</a><a class="dropdown-item"
+                                href="https://glico-icreo.com.vn/glico-icreo-grow-up-milk-hop-giay-p7930.html">Glico
+                                ICREO Grow-up Milk (Hộp giấy)</a><a class="dropdown-item"
+                                href="https://glico-icreo.com.vn/glico-icreo-grow-up-milk-820g-p7927.html">Glico ICREO
+                                Grow-up Milk (820g)</a><a class="dropdown-item"
+                                href="https://glico-icreo.com.vn/combo-glico-icreo-grow-up-milk-p7933.html">Combo Glico
+                                ICREO Grow-up Milk</a><a class="dropdown-item"
+                                href="https://glico-icreo.com.vn/glico-icreo-learning-milk-820g-p7936.html">Glico ICREO
+                                Learning Milk (820g)</a><a class="dropdown-item xem-tat-ca-san-pham-mobile"
+                                href="https://glico-icreo.com.vn/danh-muc-san-pham.html">Xem tất cả</a></div>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chăm sóc mẹ mang thai</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item"
+                                href="https://glico-icreo.com.vn/mang-thai-c681227.html">Mang thai</a><a
+                                class="dropdown-item"
+                                href="https://glico-icreo.com.vn/cham-soc-me-sau-sinh-c681233.html">Sau sinh</a><a
+                                class="dropdown-item"
+                                href="https://glico-icreo.com.vn/cham-soc-me-mang-thai-c681197.html">Xem tất cả</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Chăm sóc bé</a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item"
+                                href="https://glico-icreo.com.vn/tu-0-12-thang-tuoi-c681202.html">Từ 0 - 12 tháng
+                                tuổi</a><a class="dropdown-item"
+                                href="https://glico-icreo.com.vn/tu-12---36-thang-tuoi-c681204.html">Từ 12 - 36 tháng
+                                tuổi</a><a class="dropdown-item"
+                                href="https://glico-icreo.com.vn/tu-36-thang-tuoi-tro-len-c681229.html">Từ 36 tháng tuổi
+                                trở lên</a><a class="dropdown-item"
+                                href="https://glico-icreo.com.vn/cham-soc-be-c681198.html">Xem tất cả</a></div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://glico-icreo.com.vn/goc-chuyen-gia.html">
+                            Góc chuyên gia
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href=" https://glico-icreo.com.vn/truyen-thong-tin-tuc-c681228.html">
+                            Truyền Thông Tin Tức
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://cp.glico.com/icreo/products/balancemilk/" target="_blank"
+                            rel="nofollow">
+                            Triết lý dinh dưỡng Nhật Bản
+                        </a>
+
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="https://glico-icreo.com.vn/dang-ky-ngay.html">
+                            Đăng ký nhận cẩm nang
+                        </a>
+                    </li>
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="https://glico-icreo.com.vn/lien-he.html">
+                            Liên hệ
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            Tài khoản
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="https://glico-icreo.com.vn/login.html">Đăng nhập</a>
+                            <a class="dropdown-item" href="https://glico-icreo.com.vn/register.html">Đăng ký</a>
+                        </div>
+                    </li>
+
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+    <main>
+        <section class="main-navigation-section d-none d-md-none d-lg-block d-xl-block" id="myHeader"
+            style="z-index: 1000;">
+            <div class="container main-navigation-container">
+                <nav class="navbar">
+                    <div class="nav-item" id="menuproduct">
+                        <a href="https://glico-icreo.com.vn/danh-muc-san-pham.html" class="nav-link dropdown-toggle"
+                            data-bs-toggle="dropdown">
+                            <i class="nav-family img"></i>
+                            <i class="active-img nav-family-active"></i>
+
+                            <span>Danh mục <br> sản phẩm</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <div class="box-news-menu">
+                                        <div class="img-box"><a href="https://glico-icreo.com.vn/danh-muc-san-pham.html"
+                                                title="Sữa Glico ICREO"><img class="thumb-img"
+                                                    src="https://glico-icreo.com.vn/asset/banner/Update banner 22.111 (1)-jrcqnn.png?w=350"
+                                                    alt="Sữa Glico ICREO"></a></div>
+                                        <h3 class="news-title"><a
+                                                href="https://glico-icreo.com.vn/danh-muc-san-pham.html"
+                                                title="Sữa Glico ICREO">Sữa Glico ICREO</a></h3>
+                                        <p class="news-desc">Sản phẩm sữa Icreo được nhập khẩu, vận hành &amp; phân phối
+                                            chính thức bởi DKSH</p>
+                                        <div class="news-footer"><a
+                                                href="https://glico-icreo.com.vn/danh-muc-san-pham.html"
+                                                title="Sữa Glico ICREO"><span class="readmore-text">Xem thêm sản phẩm
+                                                </span><i class="icon-readmore-button"></i></a></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="col-md-12 title_menu_topic">Tất cả sản phẩm</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-4">
+                                            <div class="title">Từ 0 - 12 tháng tuổi</div>
+                                            <ul class="nav">
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/glico-icreo-balance-milk-hop-giay-p7929.html">Glico
+                                                        ICREO Balance Milk (hộp giấy)</a></li>
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/glico-icreo-balance-milk-320g-p7931.html">Glico
+                                                        ICREO Balance Milk (320g)</a></li>
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/glico-icreo-balance-milk-800g-p7928.html">Glico
+                                                        ICREO Balance Milk (800g)</a></li>
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/combo-glico-icreo-balance-milk-p7932.html">Combo
+                                                        Glico ICREO Balance Milk</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-12 col-md-4">
+                                            <div class="title">Từ 12 - 36 tháng tuổi</div>
+                                            <ul class="nav">
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/glico-icreo-grow-up-milk-hop-giay-p7930.html">Glico
+                                                        ICREO Grow-up Milk (Hộp giấy)</a></li>
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/glico-icreo-grow-up-milk-820g-p7927.html">Glico
+                                                        ICREO Grow-up Milk (820g)</a></li>
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/combo-glico-icreo-grow-up-milk-p7933.html">Combo
+                                                        Glico ICREO Grow-up Milk</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-12 col-md-4">
+                                            <div class="title">Từ 36 tháng tuổi trở lên</div>
+                                            <ul class="nav">
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/glico-icreo-learning-milk-820g-p7936.html">Glico
+                                                        ICREO Learning Milk (820g)</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="nav-item" id="me_mang_thai">
+                        <a href="https://glico-icreo.com.vn/cham-soc-me-mang-thai-c681197.html"
+                            class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="nav-active-homepage img"></i>
+                            <i class="active-img nav-active-homepage-active"></i>
+                            <span>Chăm sóc mẹ <br> mang thai</span>
+                        </a>
+                        <div class="dropdown-menu">
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <div class="box-news-menu">
+                                        <div class="img-box"><a
+                                                href="https://glico-icreo.com.vn/an-gi-de-nhieu-sua-a68144.html"
+                                                title="Ăn gì để nhiều sữa? Gợi ý 15 thực phẩm lợi sữa cho mẹ bỉm"><img
+                                                    class="thumb-img"
+                                                    src="https://glico-icreo.com.vn/asset/thumbnail/article\an-gi-de-nhieu-sua-jjxutc.jpg?w=350"
+                                                    alt="Ăn gì để nhiều sữa? Gợi ý 15 thực phẩm lợi sữa cho mẹ bỉm"></a>
+                                        </div>
+                                        <h3 class="news-title"><a
+                                                href="https://glico-icreo.com.vn/an-gi-de-nhieu-sua-a68144.html"
+                                                title="Ăn gì để nhiều sữa? Gợi ý 15 thực phẩm lợi sữa cho mẹ bỉm">Ăn gì
+                                                để nhiều sữa? Gợi ý 15 thực phẩm lợi sữa cho mẹ bỉm</a></h3>
+                                        <p class="news-desc">Với phụ nữ nuôi con bằng sữa mẹ, một trong những mối quan
+                                            tâm hàng đầu là ăn gì để nhiều sữa, có ngu...</p>
+                                        <div class="news-footer"><a
+                                                href="https://glico-icreo.com.vn/an-gi-de-nhieu-sua-a68144.html"
+                                                title="Ăn gì để nhiều sữa? Gợi ý 15 thực phẩm lợi sữa cho mẹ bỉm"><span
+                                                    class="readmore-text">Tìm hiểu thêm </span><i
+                                                    class="icon-readmore-button"></i></a></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="col-md-12 title_menu_topic">Chủ đề</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-4 box-toppic-news-menu">
+                                            <div class="title"><a
+                                                    href="https://glico-icreo.com.vn/mang-thai-c681227.html">Mang
+                                                    thai</a></div>
+                                            <ul class="nav">
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/7-loai-trai-cay-ba-bau-khong-nen-an-a68137.html">7
+                                                        loại trái cây bà bầu không nên ăn nhiều trong thai kỳ</a></li>
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/nhung-loai-rau-tot-cho-ba-bau-3-thang-dau-a68204.html">12
+                                                        loại rau tốt cho bà bầu 3 tháng đầu thêm ngay vào thực đơn</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/uong-sua-bau-vao-thang-thu-may-la-tot-nhat-a68182.html">Uống
+                                                        sữa bầu vào tháng thứ mấy là tốt nhất cho mẹ và bé?</a></li>W
+                                            </ul>
+                                            <div class="news-footer"><a
+                                                    href="https://glico-icreo.com.vn/mang-thai-c681227.html"
+                                                    title="Mang thai"><span class="readmore-text">Tìm hiểu thêm
+                                                    </span><i class="icon-readmore-button"></i></a></div>
+                                        </div>
+                                        <div class="col-12 col-md-4 box-toppic-news-menu">
+                                            <div class="title"><a
+                                                    href="https://glico-icreo.com.vn/cham-soc-me-sau-sinh-c681233.html">Sau
+                                                    sinh</a></div>
+                                            <ul class="nav">
+                                                <li><a href="https://glico-icreo.com.vn/an-gi-de-nhieu-sua-a68144.html">Ăn
+                                                        gì để nhiều sữa? Gợi ý 15 thực phẩm lợi sữa cho mẹ bỉm</a></li>
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/thuc-pham-gay-mat-sua-a68181.html">12
+                                                        loại thực phẩm gây mất sữa mà mẹ cần hạn chế ăn sau sinh</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/nhung-loai-trai-cay-gay-mat-sua-a68178.html">Những
+                                                        loại trái cây gây mất sữa, ít sữa mẹ nên tránh</a></li>
+                                            </ul>
+                                            <div class="news-footer"><a
+                                                    href="https://glico-icreo.com.vn/cham-soc-me-sau-sinh-c681233.html"
+                                                    title="Sau sinh"><span class="readmore-text">Tìm hiểu thêm </span><i
+                                                        class="icon-readmore-button"></i></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="nav-item" id="cham_soc_be">
+                        <a href="https://glico-icreo.com.vn/cham-soc-be-c681198.html" class="nav-link dropdown-toggle"
+                            data-bs-toggle="dropdown">
+                            <i class="nav-take-care img"></i>
+                            <i class="active-img nav-take-care-active"></i>
+                            <span>Chăm sóc bé</span>
+                        </a>
+
+                        <div class="dropdown-menu">
+                            <div class="row">
+                                <div class="col-12 col-md-4">
+                                    <div class="box-news-menu">
+                                        <div class="img-box"><a
+                                                href="https://glico-icreo.com.vn/be-3-tuoi-an-khong-tieu-bi-non-a68221.html"
+                                                title="Nguyên nhân bé 3 tuổi ăn không tiêu bị nôn &amp; Cách khắc phục"><img
+                                                    class="thumb-img"
+                                                    src="https://glico-icreo.com.vn/asset/thumbnail/article\be-3-tuoi-an-khong-tieu-bi-non-yofcti.jpg?w=350"
+                                                    alt="Nguyên nhân bé 3 tuổi ăn không tiêu bị nôn &amp; Cách khắc phục"></a>
+                                        </div>
+                                        <h3 class="news-title"><a
+                                                href="https://glico-icreo.com.vn/be-3-tuoi-an-khong-tieu-bi-non-a68221.html"
+                                                title="Nguyên nhân bé 3 tuổi ăn không tiêu bị nôn &amp; Cách khắc phục">Nguyên
+                                                nhân bé 3 tuổi ăn không tiêu bị nôn &amp; Cách khắc phục</a></h3>
+                                        <p class="news-desc">Bé 3 tuổi ăn không tiêu bị nôn nên cơ thể mệt mỏi, cân nặng
+                                            “dậm chân” khiến mẹ không khỏi xót xa. N...</p>
+                                        <div class="news-footer"><a
+                                                href="https://glico-icreo.com.vn/be-3-tuoi-an-khong-tieu-bi-non-a68221.html"
+                                                title="Nguyên nhân bé 3 tuổi ăn không tiêu bị nôn &amp; Cách khắc phục"><span
+                                                    class="readmore-text">Tìm hiểu thêm </span><i
+                                                    class="icon-readmore-button"></i></a></div>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="row">
+                                        <div class="col-md-12 title_menu_topic">Chủ đề</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-md-4 box-toppic-news-menu">
+                                            <div class="title"><a
+                                                    href="https://glico-icreo.com.vn/tu-0-12-thang-tuoi-c681202.html">Từ
+                                                    0 - 12 tháng tuổi</a></div>
+                                            <ul class="nav">
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/cach-cham-soc-tre-so-sinh-tu-a-den-z-a68122.html">​​​​​​​Nằm
+                                                        lòng cách chăm sóc trẻ sơ sinh từ A đến Z chuẩn nhất</a></li>
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/tre-6-thang-an-duoc-nhung-gi-a68188.html">Trẻ
+                                                        6 tháng ăn được những gì? Mẹ lưu ý gì khi cho trẻ ăn dặm?</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/meo-dan-gian-tri-tao-bon-cho-tre-so-sinh-a68170.html">8
+                                                        mẹo dân gian trị táo bón cho trẻ sơ sinh hiệu quả tại nhà</a>
+                                                </li>
+                                            </ul>
+                                            <div class="news-footer"><a
+                                                    href="https://glico-icreo.com.vn/tu-0-12-thang-tuoi-c681202.html"
+                                                    title="Từ 0 - 12 tháng tuổi"><span class="readmore-text">Tìm hiểu
+                                                        thêm </span><i class="icon-readmore-button"></i></a></div>
+                                        </div>
+                                        <div class="col-12 col-md-4 box-toppic-news-menu">
+                                            <div class="title"><a
+                                                    href="https://glico-icreo.com.vn/tu-12---36-thang-tuoi-c681204.html">Từ
+                                                    12 - 36 tháng tuổi</a></div>
+                                            <ul class="nav">
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/day-tre-2-tuoi-tap-noi-a68177.html">Mách
+                                                        mẹ 10 cách dạy trẻ 2 tuổi tập nói sớm, nói chuẩn siêu dễ</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/thuc-don-cho-be-2-tuoi-a68158.html">11
+                                                        thực đơn cho bé 2 tuổi đủ dưỡng chất, dễ làm cho mẹ</a></li>
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/thuc-don-cho-be-1-tuoi-a68130.html">Gợi
+                                                        ý thực đơn cho bé 1 tuổi ăn ngon với 8 món ăn đủ chất</a></li>
+                                            </ul>
+                                            <div class="news-footer"><a
+                                                    href="https://glico-icreo.com.vn/tu-12---36-thang-tuoi-c681204.html"
+                                                    title="Từ 12 - 36 tháng tuổi"><span class="readmore-text">Tìm hiểu
+                                                        thêm </span><i class="icon-readmore-button"></i></a></div>
+                                        </div>
+                                        <div class="col-12 col-md-4 box-toppic-news-menu">
+                                            <div class="title"><a
+                                                    href="https://glico-icreo.com.vn/tu-36-thang-tuoi-tro-len-c681229.html">Từ
+                                                    36 tháng tuổi trở lên</a></div>
+                                            <ul class="nav">
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/be-3-tuoi-an-khong-tieu-bi-non-a68221.html">Nguyên
+                                                        nhân bé 3 tuổi ăn không tiêu bị nôn &amp; Cách khắc phục</a>
+                                                </li>
+                                                <li><a
+                                                        href="https://glico-icreo.com.vn/tri-tao-bon-cho-tre-3-tuoi-a68208.html">Nguyên
+                                                        nhân và cách trị táo bón cho trẻ 3 tuổi hiệu quả</a></li>
+                                            </ul>
+                                            <div class="news-footer"><a
+                                                    href="https://glico-icreo.com.vn/tu-36-thang-tuoi-tro-len-c681229.html"
+                                                    title="Từ 36 tháng tuổi trở lên"><span class="readmore-text">Tìm
+                                                        hiểu thêm </span><i class="icon-readmore-button"></i></a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nav-item" id="goc_chuyen_gia">
+                        <a href="https://glico-icreo.com.vn/truyen-thong-tin-tuc-c681228.html"
+                            class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="nav-profesional img"></i>
+                            <i class="active-img nav-profesional-active"></i>
+                            <span>Truyền Thông <br> Tin Tức</span>
+                        </a>
+                    </div>
+
+
+
+                    <div class="nav-item">
+                        <a href="https://glico-icreo.com.vn/lien-he.html" class="nav-link">
+                            <i class="nav-customer img"></i>
+                            <i class="active-img nav-customer-active"></i>
+                            <span>Liên hệ</span>
+                        </a>
+                    </div>
+
+                </nav>
+            </div>
+        </section>
+        <section class="banner-section">
+            <div class="swiper-container">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <div class="video-wrapper">
+                            <picture>
+                                <source media="(max-width: 767px)" srcset="assets/image-kv-mobile.png">
+                                <img src="assets/image-kv.png" alt="">
+                            </picture>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="video-wrapper">
+                            <video muted loop>
+                                <source src="assets/video1.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </li>
+                    <li class="swiper-slide">
+                        <div class="video-wrapper">
+                            <video muted loop>
+                                <source src="assets/video3.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </li>
+                </ul>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+        </section>
+        <section class="take-care pregnant" id="takecare-section-1">
+            <picture>
+                <source media="(min-width: 1024px)"
+                    srcset="https://glico-icreo.com.vn/asset/banner/bg-mang-thai-lzhfvz.jpg ">
+                <img src="https://glico-icreo.com.vn/asset/banner/pregnant-bg-jkrbka.png " alt="cham-soc-me-bau"
+                    class="bg" width="1458" height="1024">
+            </picture>
+            <div class="container">
+                <div class="top">
+                    <h2 class="tittle">Chăm sóc mẹ mang thai</h2>
+                    <p>
+                        Tổng hợp các bài viết, thông tin hữu ích về chăm sóc mẹ bầu giai đoạn mang thai cho đến lúc sau
+                        sinh, giúp mẹ khỏe, bé ngoan.
+                    </p>
+                    <a href="https://glico-icreo.com.vn/cham-soc-me-mang-thai-c681197.html">
+                        <picture>
+                            <source media="(min-width: 1024px)"
+                                srcset="https://glico-icreo.com.vn/Users/assets/images/main/home/take-care/detail-button.svg">
+                            <img src="https://glico-icreo.com.vn/Users/assets/images/mobile/take-care/detail-btn.png"
+                                alt="" width="255" height="82">
+                        </picture>
+                    </a>
+                </div>
+                <div class="bottom">
+                    <div class="news-item">
+                        <div class="card"><img
+                                src="https://glico-icreo.com.vn/Users/assets/images/main/home/take-care/flower-on-news.svg"
+                                class="border-img">
+                            <div class="img-thumb"><img
+                                    src="https://glico-icreo.com.vn/asset/thumbnail/article\triet-ly-dinh-duong-cua-me-nhat-ywnbyk.jpg?w=300"
+                                    alt="Triết lý dinh dưỡng của mẹ Nhật" class="news-img"></div>
+                            <div class="card-body">
+                                <h3 class="card-text"><a
+                                        href="https://glico-icreo.com.vn/triet-ly-dinh-duong-cua-me-nhat-a6854.html"
+                                        title="Triết lý dinh dưỡng của mẹ Nhật">Triết lý dinh dưỡng của mẹ Nhật</a></h3>
+                                <a class="link-arrow"
+                                    href="https://glico-icreo.com.vn/triet-ly-dinh-duong-cua-me-nhat-a6854.html">Đọc
+                                    tiếp<span><img
+                                            src="https://glico-icreo.com.vn/Users/assets/images/main/home/take-care/arrow-icon.svg"
+                                            alt="icon-readmore"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item active">
+                        <div class="card"><img
+                                src="https://glico-icreo.com.vn/Users/assets/images/main/home/take-care/flower-on-news.svg"
+                                class="border-img">
+                            <div class="img-thumb"><img
+                                    src="https://glico-icreo.com.vn/asset/thumbnail/article\glico-icreo--sua-nhat-duy-nhat-duoc-nhieu-chuyen-gia-khuyen-dung-nhat-ahofxa.png?w=300"
+                                    alt="Glico Icreo – Sữa Nhật được rất nhiều chuyên gia khuyên dùng"
+                                    class="news-img"></div>
+                            <div class="card-body">
+                                <h3 class="card-text"><a
+                                        href="https://glico-icreo.com.vn/glico-icreo--sua-nhat-duoc-rat-nhieu-chuyen-gia-khuyen-dung-a68114.html"
+                                        title="Glico Icreo – Sữa Nhật được rất nhiều chuyên gia khuyên dùng">Glico
+                                        Icreo – Sữa Nhật được rất nhiều chuyên gia khuyên dùng</a></h3><a
+                                    class="link-arrow"
+                                    href="https://glico-icreo.com.vn/glico-icreo--sua-nhat-duoc-rat-nhieu-chuyen-gia-khuyen-dung-a68114.html">Đọc
+                                    tiếp<span><img
+                                            src="https://glico-icreo.com.vn/Users/assets/images/main/home/take-care/arrow-icon.svg"
+                                            alt="icon-readmore"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="news-item">
+                        <div class="card"><img
+                                src="https://glico-icreo.com.vn/Users/assets/images/main/home/take-care/flower-on-news.svg"
+                                class="border-img">
+                            <div class="img-thumb"><img
+                                    src="https://glico-icreo.com.vn/asset/thumbnail/article\tai-sao-me-bau-o-nhat-phai-kiem-soat-can-nang-nghiem-ngat-kctgcr.jpg?w=300"
+                                    alt="Tại sao mẹ bầu ở Nhật phải kiểm soát cân nặng nghiêm ngặt?" class="news-img">
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-text"><a
+                                        href="https://glico-icreo.com.vn/tai-sao-me-bau-o-nhat-phai-kiem-soat-can-nang-nghiem-ngat-a6853.html"
+                                        title="Tại sao mẹ bầu ở Nhật phải kiểm soát cân nặng nghiêm ngặt?">Tại sao mẹ
+                                        bầu ở Nhật phải kiểm soát cân nặng nghiêm ngặt?</a></h3><a class="link-arrow"
+                                    href="https://glico-icreo.com.vn/tai-sao-me-bau-o-nhat-phai-kiem-soat-can-nang-nghiem-ngat-a6853.html">Đọc
+                                    tiếp<span><img
+                                            src="https://glico-icreo.com.vn/Users/assets/images/main/home/take-care/arrow-icon.svg"
+                                            alt="icon-readmore"></span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <picture>
+                <source media="(min-width: 1024px)"
+                    srcset="https://glico-icreo.com.vn/Users/assets/images/main/home/take-care/bottom-section-pregnant.svg">
+                <img src="https://glico-icreo.com.vn/Users/assets/images/mobile/take-care/section-footer.svg" alt=""
+                    class="footer-bg">
+            </picture>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-12 col-lg-7 col-md-7 glico-info">
+
+                    <p style="font-weight: 500;font-size: 16px;">Nhập khẩu và phân phối chính thức</p>
+                    <p class="glico-info-header" style="font-family: &quot;SVN Mikado ExtraBold&quot;;">
+                        Công ty TNHH DKSH Việt Nam
+                    </p>
+                    <p>
+                        <strong>Trụ sở chính: </strong> tòa nhà Viettel Complex, <br>285 đường Cách Mạng Tháng Tám,
+                        phường 12, Quận 10, TP. Hồ Chí Minh
+                    </p>
+                    <p><strong> Hotline: </strong>1800 545405</p>
+
+                    <br>
+                    <p class="glico-info-header" style="font-family: &quot;SVN Mikado ExtraBold&quot;;">GLICO ASIA
+                        PACIFIC PTE. LTD.</p>
+                    <p>
+                        <strong>Trụ sở chính: </strong> 138 Market Street, #35-04 CapitaGreen, Singapore 048946
+                    </p>
+
+
+                </div>
+
+                <div class="col-12 col-lg-5 col-md-5">
+                    <div class="row">
+                        <div class="col-12" id="quick_link_footer">
+                            <p style="font-family: &quot;SVN Mikado Bold&quot;;">Liên kết nhanh</p>
+                            <ul>
+                                <li>
+                                    <a href="https://glico-icreo.com.vn/danh-muc-san-pham.html">Sản phẩm</a>
+                                </li>
+                                <li>
+                                    <a href="https://cp.glico.com/icreo/products/balancemilk/" target="_blank"
+                                        rel="nofollow">Triết Lý Dinh Dưỡng Nhật Bản</a>
+                                </li>
+                                <li>
+                                    <a href="https://glico-icreo.com.vn/cham-soc-me-mang-thai-c681197.html">Chăm Sóc Mẹ
+                                        Mang Thai</a>
+                                </li>
+                                <li>
+                                    <a href="https://glico-icreo.com.vn/cham-soc-be-c681198.html">Chăm Sóc Bé</a>
+                                </li>
+                                <li>
+                                    <a href="https://glico-icreo.com.vn/truyen-thong-tin-tuc-c681228.html">Truyền Thông
+                                        Tin Tức</a>
+                                </li>
+                                <li>
+                                    <a href="https://glico-icreo.com.vn/goc-chuyen-gia.html">Góc Chuyên Gia</a>
+                                </li>
+                                <li>
+                                    <a href="https://glico-icreo.com.vn/lien-he.html">Liên hệ</a>
+                                </li>
+                                <li>
+                                    <a href="https://glico-icreo.com.vn/chinh-sach-bao-mat.html">Chính sách bảo mật</a>
+                                </li>
+
+                            </ul>
+                        </div>
+
+                        <br>
+                        <div class="col-12 glico-social-network">
+                            <p style="font-size: 1rem">Kết nối với chúng tôi</p>
+                            <div class="social-links">
+                                <a href="https://www.facebook.com/glicoicreoVietnam" target="_blank">
+                                    <i class="button-facebook-connect"></i>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="assets/wow.min.js"></script>
+    <script src="assets/bootstrap.min.js"></script>
+    <script src="assets/utils.min.js"></script>
+    <script src="https://unpkg.com/swiper@8.0.7/swiper-bundle.min.js"></script>
+    <script>
+        // jQuery(function ($) {
+        //     var swiper = new Swiper('.swiper-container', {
+        //         loop: true,
+        //         autoplay: false,
+        //         pagination: {
+        //             el: '.swiper-pagination',
+        //             clickable: true
+        //         },
+        //         navigation: {
+        //             nextEl: '.swiper-button-next',
+        //             prevEl: '.swiper-button-prev',
+        //         },
+        //         // ON INIT AUTOPLAY THE FIRST VIDEO 
+        //         on: {
+        //             init: function () {
+        //                 var currentVideo = $("[data-swiper-slide-index=" + this.realIndex + "]").find("video");
+        //                 currentVideo.trigger('play');
+        //             },
+        //         },
+        //     });
+
+        //     //GET ALL VIDEOS 
+        //     var sliderVideos = $(".swiper-slide video");
+
+        //     // SWIPER API - Event will be fired after animation to other slide (next or previous)
+        //     swiper.on('slideChange', function () {
+        //         //stop all videos
+        //         sliderVideos.each(function (index) {
+        //             this.currentTime = 0;
+        //         });
+
+        //         // SWIPER GET CURRENT AND PREV SLIDE (AND The VIDEO INSIDE)
+        //         var prevVideo = $(`[data-swiper-slide-index="${this.previousIndex}]"`).find("video");
+        //         var currentVideo = $(`[data-swiper-slide-index="${this.realIndex}"]`).find("video");
+        //         prevVideo.trigger('stop');
+        //         currentVideo.trigger('play');
+        //     });
+        // })
+        jQuery(function ($) {
+            var autoplayTimeout;
+
+            var swiper = new Swiper('.swiper-container', {
+                loop: true,
+                autoplay: false, // tắt autoplay mặc định
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                on: {
+                    init: function () {
+                        playActiveVideo();
+                        setCustomAutoplay(this);
+                    },
+                    slideChangeTransitionStart: function () {
+                        stopAllVideos();
+                        clearTimeout(autoplayTimeout);
+                    },
+                    slideChangeTransitionEnd: function () {
+                        playActiveVideo();
+                        setCustomAutoplay(this);
+                    }
+                },
+            });
+
+            function stopAllVideos() {
+                $(".swiper-slide video").each(function () {
+                    this.pause();
+                    this.currentTime = 0;
+                });
+            }
+
+            function playActiveVideo() {
+                var currentVideo = $(".swiper-slide-active video");
+                if (currentVideo.length) {
+                    currentVideo.get(0).play();
+                }
+            }
+
+            function setCustomAutoplay(swiperInstance) {
+                var $activeSlide = $(".swiper-slide-active");
+                var delay = 5000; // default 5s
+
+                // Nếu trong slide có video thì đặt thời gian lâu hơn
+                if ($activeSlide.find("video").length > 0) {
+                    delay = 15000; // video: 15s
+                }
+
+                autoplayTimeout = setTimeout(function () {
+                    swiperInstance.slideNext();
+                }, delay);
+            }
+        });
+    </script>
+</body>
+
+</html>
